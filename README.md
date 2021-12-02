@@ -1,5 +1,5 @@
 # README
-# Requirements: postgres installed
+# Requirements: rails postgres installed
 # 
 # clone
 # cd boot_test
