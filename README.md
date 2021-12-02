@@ -8,7 +8,7 @@
 # 
 # rails s
 # localhost:3000/home/index
-# if acordion ok and Home#index in green and Find me... in red then bootstrap its ok
+# if accordion ok and Home#index in green and Find me... in red then bootstrap its ok
 # rails d controller Home index
 # 
 # finally go to app/views/layouts/application.html.erb
