@@ -12,4 +12,4 @@
 # rails d controller Home index
 # 
 # finally go to app/views/layouts/application.html.erb
-# and change the <title>BootTest</title> in the head accordingly
+# and change the <title>BootTest</title> in the head accordingly to your project
