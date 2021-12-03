@@ -5,6 +5,7 @@
 # cd boot_test
 # yarn add bootstrap jquery popper.js
 # yarn add @popperjs/core
+# yarn add bootstrap-icons
 # bundle install
 # 
 # rails s
