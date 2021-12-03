@@ -5,6 +5,7 @@
 # cd boot_test
 # yarn add bootstrap jquery popper.js
 # yarn add @popperjs/core
+# bundle install
 # 
 # rails s
 # localhost:3000/home/index
