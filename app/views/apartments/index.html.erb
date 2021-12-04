@@ -1,0 +1,27 @@
+<h1>Listing apartments</h1>
+
+<table>
+  <tr>
+    <th>Number</th>
+    <th>Status</th>
+    <th>Building</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @apartments.each do |apartment| %>
+  <tr>
+    <td><%= apartment.number %></td>
+    <td><%= apartment.status %></td>
+    <td><%= apartment.building %></td>
+    <td><%= link_to 'Show', [apartment.building, apartment] %></td>
+    <td><%= link_to 'Edit', edit_building_apartment_path(apartment.building, apartment) %></td>
+    <td><%= link_to 'Destroy', [apartment.building, apartment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Apartment', new_building_apartment_path(params[:building_id]) %>
