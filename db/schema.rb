@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_12_04_200501) do
   enable_extension "plpgsql"
 
   create_table "apartments", force: :cascade do |t|
-    t.string "number"
+    t.string "number", null: false
     t.string "status"
     t.bigint "building_id", null: false
     t.datetime "created_at", precision: 6, null: false

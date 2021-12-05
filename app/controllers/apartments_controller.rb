@@ -1,4 +1,5 @@
 class ApartmentsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_building
   before_action :set_apartment, only: [:show, :edit, :update, :destroy]
 
@@ -25,7 +26,8 @@ class ApartmentsController < ApplicationController
     @apartment = @building.apartments.build(apartment_params)
 
     if @apartment.save
-      redirect_to([@apartment.building, @apartment], notice: 'Apartment was successfully created.')
+      redirect_to(@apartment.building)
+      # redirect_to([@apartment.building, @apartment], notice: 'Apartment was successfully created.')
     else
       render action: 'new'
     end
@@ -50,7 +52,7 @@ class ApartmentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_building
-      @building = Building.find(params[:building_id])
+      @building = current_user.buildings.find(params[:building_id])
     end
 
     def set_apartment

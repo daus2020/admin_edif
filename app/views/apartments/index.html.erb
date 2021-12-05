@@ -1,13 +1,10 @@
-<h1>Listing apartments</h1>
+<h2>Lista de Departamentos</h2>
 
 <table>
   <tr>
-    <th>Number</th>
-    <th>Status</th>
-    <th>Building</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Número </th>
+    <th> Status </th>
+    <th> Edificio</th>
   </tr>
 
 <% @apartments.each do |apartment| %>
@@ -24,4 +21,5 @@
 
 <br />
 
-<%= link_to 'New Apartment', new_building_apartment_path(params[:building_id]) %>
+<%= button_to 'Nuevo Departamento', new_building_apartment_path(params[:building_id]), method: :get, class: "btn btn-outline-success" %>
+<%# <%= link_to 'Nuevo Departamento', new_building_apartment_path(params[:building_id]) %>

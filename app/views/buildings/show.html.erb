@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre:</strong>
   <%= @building.name %>
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong>Dirección:</strong>
   <%= @building.address %>
 </p>
 
 <p>
-  <strong>City:</strong>
+  <strong>Ciudad:</strong>
   <%= @building.city %>
 </p>
 
@@ -22,3 +22,41 @@
 
 <%= link_to 'Edit', edit_building_path(@building) %> |
 <%= link_to 'Back', buildings_path %>
+
+<hr>
+<h2>Nuevo Departamento</h2>
+
+<%= render 'apartments/form' %>
+
+
+<hr>
+
+<h2>Lista de Departamentos</h2>
+
+<table>
+  <tr>
+    <th>Número </th>
+    <th> Status </th>
+    <th> Edificio</th>
+  </tr>
+
+  <% @building.apartments.each do |apartment| %>
+    <% if apartment.persisted? %>
+      <tr>
+        <td><%= apartment.number %></td>
+        <td><%= apartment.status %></td>
+        <td><%= apartment.building %></td>
+        <td><%= link_to 'Show', [apartment.building, apartment] %></td>
+        <td><%= link_to 'Edit', edit_building_apartment_path(apartment.building, apartment) %></td>
+        <td><%= link_to 'Destroy', [apartment.building, apartment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+
+
+<hr>
+
+<%= button_to 'Nuevo Departamento', new_building_apartment_path(@building.id), method: :get, class: "btn btn-outline-success" %>
+<%# <%= link_to 'Nuevo Departamento', new_building_apartment_path(params[:building.id]), class: "btn btn-outline-success" %>
+<%# <%= button_to 'Nuevo Departamento', new_building_apartment_path(params[:building_id]), method: :get, class: "btn btn-outline-success" %>
