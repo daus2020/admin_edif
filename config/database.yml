@@ -22,8 +22,15 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  <<: *default
+  # <<: *default
+  # database: boot_test_development
+  adapter: postgresql
+  encoding: unicode
   database: boot_test_development
+  host: localhost
+  pool: 5
+  username: daniel
+  password: root
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -80,7 +87,15 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  database: boot_test_production
-  username: boot_test
-  password: <%= ENV['BOOT_TEST_DATABASE_PASSWORD'] %>
+  # <<: *default
+  # database: boot_test_production
+  # username: boot_test
+  # password: <%= ENV['BOOT_TEST_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  database: boot_test_Production
+  host: localhost
+  pool: 5
+  username: daniel
+  password: <%= ENV['boot_test_Password'] %>
+  role: admin
