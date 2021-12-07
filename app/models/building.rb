@@ -4,5 +4,5 @@ class Building < ApplicationRecord
   belongs_to :user
 
   validates :name, :address, :city, presence: true
-  validates :name, uniqueness: true
+  validates :name, uniqueness:  { scope: :city }
 end

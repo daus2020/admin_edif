@@ -3,28 +3,51 @@
 <%# <h1 class= "text-center fs-1">Edificios</h1> %>
 
 <br>
-<h1 class= "text-center fs-1">Edificios</h1>
-<div class="row">
+<h1 class= "text-center fs-1 fw-bold shadow-lg text-white">EDIFICIOS</h1>
+<br>
+<div class="row justify-content-evenly">
   <%# <div class="col-3"> %>
     <% @buildings.each do |building| %>
-      <div class="card col-3" style="width: 18rem;">
+      <div class="card col-3">
         <div class="card-body">
           <h2 class="card-title text-center"><%= building.name %></h2>
           <h6 class="card-subtitle mb-2 text-muted text-center">Nombre</h6>
           <hr>
+          <div class="d-flex justify-content-around">
+            <button type="button" class="btn btn-outline-success position-relative">
+              D
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">
+                99
+                <%# <span class="visually-hidden">unread messages</span> %>
+              </span>
+            </button>
+            <button type="button" class="btn btn-outline-secondary position-relative">
+              R
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">
+                99
+                <%# <span class="visually-hidden">unread messages</span> %>
+              </span>
+            </button>
+            <button type="button" class="btn btn-outline-danger position-relative">
+              A
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">
+                99
+                <%# <span class="visually-hidden">unread messages</span> %>
+              </span>
+            </button>
+          </div>
           <br>
           <p class="card-text text-center"><%= building.address %></p>
-          <br>
           <h4 class="card-title text-center"><%= building.city %></h4>
-          <br>
+          <hr>
           <div class="d-flex justify-content-around">
-            <%= link_to building, class: "btn btn-outline-danger", title: 'Mostrar', 'data-toggle' => 'tooltip', 'data-placement' => 'top' do %> 
+            <%= link_to building, class: "btn btn-outline-secondary", title: 'Mostrar', 'data-toggle' => 'tooltip' do %> 
               <i class="bi bi-eye"></i>
             <% end %>
-            <%= link_to edit_building_path(building), class: "btn btn-outline-danger", title: 'Editar', 'data-toggle' => 'tooltip', 'data-placement' => 'top' do %> 
-              <i class="bi bi-pencil-square"></i>
+            <%= link_to edit_building_path(building), class: "btn btn-outline-secondary", title: 'Editar' do %> 
+              <i class="bi bi-pencil"></i>
             <% end %>
-            <%= link_to  building, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger",  title: 'Eliminar', 'data-toggle' => 'tooltip', 'data-placement' => 'top' do %>
+            <%= link_to  building, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-secondary",  title: 'Eliminar', 'data-toggle' => 'tooltip' do %>
               <i class="bi bi-trash"></i> 
             <% end %>
           </div>
