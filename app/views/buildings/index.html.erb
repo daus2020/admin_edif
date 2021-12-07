@@ -13,19 +13,21 @@
           <h6 class="card-subtitle mb-2 text-muted text-center">Nombre</h6>
           <hr>
           <br>
-          <p class="card-text"><%= building.address %></p>
+          <p class="card-text text-center"><%= building.address %></p>
           <br>
-          <h4 class="card-title"><%= building.city %></h4>
+          <h4 class="card-title text-center"><%= building.city %></h4>
           <br>
-          <%= link_to building, class: "btn btn-outline-primary" do %> 
-            <i class="bi bi-eye"></i>
-          <% end %>
-          <%= link_to edit_building_path(building), class: "btn btn-outline-warning" do %> 
-            <i class="bi bi-pencil-square"></i>
-          <% end %>
-          <%= link_to  building, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" do %>
-            <i class="bi bi-trash"></i> 
-          <% end %>
+          <div class="d-flex justify-content-around">
+            <%= link_to building, class: "btn btn-outline-danger", title: 'Mostrar', 'data-toggle' => 'tooltip', 'data-placement' => 'top' do %> 
+              <i class="bi bi-eye"></i>
+            <% end %>
+            <%= link_to edit_building_path(building), class: "btn btn-outline-danger", title: 'Editar', 'data-toggle' => 'tooltip', 'data-placement' => 'top' do %> 
+              <i class="bi bi-pencil-square"></i>
+            <% end %>
+            <%= link_to  building, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger",  title: 'Eliminar', 'data-toggle' => 'tooltip', 'data-placement' => 'top' do %>
+              <i class="bi bi-trash"></i> 
+            <% end %>
+          </div>
           <%# <a href="#" class="card-link">Another link</a> %>
         </div>
       </div>
