@@ -1,5 +1,23 @@
-       @import 'config/fonts';
-       @import 'config/colors';
-       @import 'config/bootstrap_variables';
+@import 'config/fonts';
+@import 'config/colors';
+@import 'config/bootstrap_variables';
        
-       @import 'bootstrap/scss/bootstrap';
+@import 'bootstrap/scss/bootstrap';
+
+body {
+  background: linear-gradient(to bottom, (rgba(5,117,230,0.5), rgba(0,242,96,0.5)));
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.gradient-buttons .btn {
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 49%, rgba(0,0,0,0.15) 51%, rgba(0,0,0,0.05));
+  background-repeat: repeat-x;
+}
+
+.card {
+  margin: 10px;
+  box-shadow: 0 5px 10px -2.5px;
+  border-radius: 10px;
+}
