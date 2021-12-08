@@ -27,7 +27,7 @@ class BuildingsController < ApplicationController
 
     respond_to do |format|
       if @building.save
-        format.html { redirect_to @building, notice: "Building was successfully created." }
+        format.html { redirect_to @building, notice: "Edificio ingresado ok." }
         format.json { render :show, status: :created, location: @building }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +40,7 @@ class BuildingsController < ApplicationController
   def update
     respond_to do |format|
       if @building.update(building_params)
-        format.html { redirect_to @building, notice: "Building was successfully updated." }
+        format.html { redirect_to @building, notice: "Edificio editado ok." }
         format.json { render :show, status: :ok, location: @building }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class BuildingsController < ApplicationController
   def destroy
     @building.destroy
     respond_to do |format|
-      format.html { redirect_to buildings_url, notice: "Building was successfully destroyed." }
+      format.html { redirect_to buildings_url, notice: "Edificio eliminado ok." }
       format.json { head :no_content }
     end
   end

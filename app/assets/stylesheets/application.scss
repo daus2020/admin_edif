@@ -7,20 +7,42 @@
 body {
   background: linear-gradient(to bottom, (rgba(5,117,230,0.5), rgba(0,242,96,0.5)));
   margin: 0;
+  padding: 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: blue;
+  min-height: 100vh;
+  min-width: fit-content;
 }
 
-.gradient-buttons .btn {
-  background-image: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 49%, rgba(0,0,0,0.15) 51%, rgba(0,0,0,0.05));
+.bg-image {
+  opacity: 0.6;
+  // justify-content: center;
+  // margin: auto;
+  background-image: url("/assets/city_skyline.png") ;
   background-repeat: repeat-x;
+  height: 110px;
+  // background-attachment: fixed;
 }
 
 .card {
-  margin: 10px;
+  margin-top: 10px;
+  margin-left: 1rem;
   box-shadow: 0 5px 10px -2.5px;
   border-radius: 10px;
-  // opacity: 0.5;
-  width: 17rem;
+  width: 18rem;
 }
+
+.card-body {
+  // opacity: 0.6;
+  background-color: rgba(217, 227, 233, 0.315);
+}
+
+.img_login {
+  margin:3px;
+}
+
+// input:focus {
+//   border-color: #FF0000;
+//   box-shadow: inset 0 1px 1px rgba(11, 98, 238, 0.308), 0 0 8px rgba(3, 170, 248, 0.6);
+// }

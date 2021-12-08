@@ -8,13 +8,27 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <%= favicon_link_tag asset_path('icon_ba.ico') %>
   </head>
 
-  <body>
+  <body class = "container d-flex flex-column h-100">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <main class="container">
+    <main>
       <%= yield %>
     </main>
+    <footer class="w-100 text-white mt-auto ">
+      <h6 class = "text-center mt-4 text-primary">
+        <i class="bi bi-telephone-fill"></i> 555 555 555 &emsp; &emsp;<span>
+        <i class="bi bi-facebook"></i> &emsp; &emsp; 
+        <i class="bi bi-twitter"></i>  &emsp; &emsp;
+        <i class="bi bi-instagram"></i></span>
+      </h6>
+      <span>&copy  MMXXI du</span>
+      <div class="bg-image">
+      </div>
+    </footer>
   </body>
 </html>
+      
+<%# <%= image_tag 'city_skyline.png', alt: 'city skyline', class: "mt-4 bg_skyline" %>

@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :buildings
+  # has_many :apartments
 
   validates :email, format: { with: /\A[^@\s]+@[^@\s]+\z/ }
 end
