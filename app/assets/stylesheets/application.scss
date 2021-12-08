@@ -15,32 +15,48 @@ body {
   min-width: fit-content;
 }
 
-.bg-image {
-  opacity: 0.6;
-  // justify-content: center;
-  // margin: auto;
-  background-image: url("/assets/city_skyline.png") ;
-  background-repeat: repeat-x;
-  height: 110px;
-  // background-attachment: fixed;
-}
 
 .card {
   margin-top: 10px;
   margin-left: 1rem;
   box-shadow: 0 5px 10px -2.5px;
   border-radius: 10px;
-  width: 18rem;
+  width: 17rem;
+  height: 22rem;
+  background-image: linear-gradient( rgba(255, 255, 255, 0.747)), url("/assets/bricks.svg");
+  // background-image: linear-gradient(rgba(255, 255, 255, 0.212), rgba(255, 255, 255, 0.747)), url("/assets/bricks.svg");
 }
 
 .card-body {
-  // opacity: 0.6;
-  background-color: rgba(217, 227, 233, 0.315);
+  opacity: 0.7;
+  background-color: #95A0A7;
+  // background-color: rgba(217, 227, 233, 0.13);
 }
 
+// image login card
 .img_login {
   margin:3px;
 }
+
+
+// building card
+.card-title-height {
+  height: 2rem;
+}
+.address-height {
+  height: 3rem;
+  // color: red;
+}
+
+
+// footer
+.bg-image {
+  opacity: 0.6;
+  background-image: url("/assets/city_skyline.png") ;
+  background-repeat: repeat-x;
+  height: 110px;
+}
+
 
 // input:focus {
 //   border-color: #FF0000;

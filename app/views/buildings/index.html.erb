@@ -3,16 +3,22 @@
 <%# <h1 class= "text-center fs-1">Edificios</h1> %>
 
 <br>
-<h1 class= "text-center fs-1 fw-bold shadow-lg text-white">EDIFICIOS</h1>
+<h1 class= "text-center fs-1 fw-bold shadow-lg">EDIFICIOS</h1>
 <br>
-<div class="row justify-content-evenly">
-  <%# <div class="col-3"> %>
+<div class="container">
+<%# <div class="row justify-content-evenly"> %>
+
+
+  <div class="row justify-content-evenly">
     <% @buildings.each do |building| %>
-      <div class="card col-3">
+      <div class="col-3 d-flex card bg-secondary">
+       <%# <div class="d-flex card bg-secondary"> %>
+        <div class="card-title pb-4">
+          <h2 class="text-center mt-3 card-title-height"><%= building.name %></h2>
+          <%# <h6 class="card-subtitle mb-2 text-muted text-center">Nombre</h6> %>
+          <%# <hr> %>
+        </div>
         <div class="card-body">
-          <h2 class="card-title text-center"><%= building.name %></h2>
-          <h6 class="card-subtitle mb-2 text-muted text-center">Nombre</h6>
-          <hr>
           <div class="d-flex justify-content-around">
             <button type="button" class="btn btn-outline-success position-relative">
               D
@@ -21,7 +27,7 @@
                 <%# <span class="visually-hidden">unread messages</span> %>
               </span>
             </button>
-            <button type="button" class="btn btn-outline-secondary position-relative">
+            <button type="button" class="btn btn-outline-info position-relative">
               R
               <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">
                 99
@@ -37,9 +43,12 @@
             </button>
           </div>
           <br>
-          <p class="card-text text-center"><%= building.address %></p>
+          <p class="card-text text-center address-height"><%= building.address %></p>
           <h4 class="card-title text-center"><%= building.city %></h4>
-          <hr>
+          <%# <hr> %>
+          <%# <a href="#" class="card-link">Another link</a> %>
+        </div>
+        <div class="card-footer mb-2">
           <div class="d-flex justify-content-around">
             <%= link_to building, class: "btn btn-outline-primary", title: 'Mostrar', 'data-toggle' => 'tooltip' do %> 
               <i class="bi bi-eye"></i>
@@ -51,11 +60,10 @@
               <i class="bi bi-trash"></i> 
             <% end %>
           </div>
-          <%# <a href="#" class="card-link">Another link</a> %>
         </div>
       </div>
     <% end %>
     <br>
-    <%= link_to 'New Building', new_building_path %>
   <%# </div> %>
 </div>
+    <%= link_to 'New Building', new_building_path %>
