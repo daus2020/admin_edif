@@ -12,9 +12,8 @@ body {
   background-attachment: fixed;
   color: blue;
   min-height: 100vh;
-  min-width: fit-content;
+  min-width: 320px;
 }
-
 
 .card {
   margin-top: 10px;
@@ -22,7 +21,14 @@ body {
   box-shadow: 0 5px 10px -2.5px;
   border-radius: 10px;
   width: 17rem;
-  height: 22rem;
+
+  .building {
+    height: 22rem;
+  }
+
+  .login {
+    height: 26.5rem;
+  }
   background-image: linear-gradient( rgba(255, 255, 255, 0.747)), url("/assets/bricks.svg");
   // background-image: linear-gradient(rgba(255, 255, 255, 0.212), rgba(255, 255, 255, 0.747)), url("/assets/bricks.svg");
 }
@@ -57,7 +63,16 @@ body {
   height: 110px;
 }
 
+.form-control:focus {   
+  border-color: rgba(126, 239, 104, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);
+  outline: 0 none;
+}
 
+.alert {
+  color: red;
+  text-align: center;
+}
 // input:focus {
 //   border-color: #FF0000;
 //   box-shadow: inset 0 1px 1px rgba(11, 98, 238, 0.308), 0 0 8px rgba(3, 170, 248, 0.6);

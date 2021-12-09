@@ -7,14 +7,14 @@
 <br>
 <%# <div class="container"> %>
 <div class="d-flex justify-content-center">
-  <%= link_to 'Ingresar nuevo Edifcio', new_building_path, class: "text-center btn btn-outline-danger" %>
+  <%= link_to 'Ingresar nuevo Edificio', new_building_path, class: "text-center btn btn-outline-danger" %>
   <%# <%= link_to 'Ingresar nuevo Edifcio', new_building_path, class: "d-flex justify-content-center btn btn-outline-success" %>
 </div>
 
 <%#  building cards creator %>
 <div class="row justify-content-evenly">
   <% @buildings.each do |building| %>
-    <div class="card col-3 d-flex bg-secondary">
+    <div class="card building col-3 d-flex bg-secondary">
       <div class="card-title pb-4">
         <h2 class="text-center mt-3 card-title-height"><%= building.name %></h2>
         <%# <h6 class="card-subtitle mb-2 text-muted text-center">Nombre</h6> %>
