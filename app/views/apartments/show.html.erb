@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Number:</b>
+  <b>Número:</b>
   <%= @apartment.number %>
 </p>
 
@@ -11,10 +11,15 @@
 </p>
 
 <p>
-  <b>Building:</b>
-  <%= @apartment.building %>
+  <b>Edificio:</b>
+  <%= @building.name %>
+  <%# <%= @apartment.building %>
 </p>
 
+<%= link_to edit_building_apartment_path(@apartment.building, @apartment), class: "btn btn-outline-primary", title: 'Editar' do %> 
+  <i class="bi bi-pencil"></i>
+<% end %> | 
+<%= link_to building_apartments_path(@apartment.building), class: "btn btn-outline-primary", title: 'Volver' do %> 
+  <i class="bi bi-arrow-counterclockwise"></i>
+<% end %>
 
-<%= link_to 'Edit', edit_building_apartment_path(@apartment.building, @apartment) %> |
-<%= link_to 'Back', building_apartments_path(@apartment.building) %>

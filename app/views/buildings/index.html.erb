@@ -1,13 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <%# <h1 class= "text-center fs-1">Edificios</h1> %>
+<div class="row">
+  <div class="col-sm-1 logo align-middle"><%= image_tag 'logo.png', alt: 'logo AE', class: "mt-1 text-success" %> Admin Edificios</div>
+  <div class="col-sm-2 ms-auto align-middle"><%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: "text-center btn btn-outline-danger" %></div>
+</div>
 
 <br>
 <h1 class= "text-center fs-1 fw-bold shadow-lg">EDIFICIOS</h1>
 <br>
 <%# <div class="container"> %>
 <div class="d-flex justify-content-center">
-  <%= link_to 'Ingresar nuevo Edificio', new_building_path, class: "text-center btn btn-outline-danger" %>
+  <%= link_to 'Ingresar nuevo Edificio', new_building_path, class: "text-center btn btn-outline-primary" %>
   <%# <%= link_to 'Ingresar nuevo Edifcio', new_building_path, class: "d-flex justify-content-center btn btn-outline-success" %>
 </div>
 
@@ -47,7 +51,6 @@
       <div class="card-footer mb-2">
         <div class="d-flex justify-content-around">
           <%= link_to building, class: "btn btn-outline-primary", title: 'Mostrar' do %> 
-          <%# <%= link_to building, class: "btn btn-outline-primary", title: 'Mostrar', 'data-toggle' => 'tooltip' do %>
             <i class="bi bi-eye"></i>
           <% end %>
           <%= link_to edit_building_path(building), class: "btn btn-outline-primary", title: 'Editar' do %> 

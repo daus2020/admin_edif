@@ -2,24 +2,35 @@
 
 <table>
   <tr>
-    <th>Número </th>
-    <th> Status </th>
-    <th> Edificio</th>
+    <th>Número</th>
+    <th> &emsp; Status </th>
+    <th> &emsp; Edificio</th>
+    <th> &emsp; &emsp; Acciones</th>
   </tr>
 
 <% @apartments.each do |apartment| %>
   <tr>
     <td><%= apartment.number %></td>
     <td><%= apartment.status %></td>
-    <td><%= apartment.building %></td>
-    <td><%= link_to 'Show', [apartment.building, apartment] %></td>
-    <td><%= link_to 'Edit', edit_building_apartment_path(apartment.building, apartment) %></td>
-    <td><%= link_to 'Destroy', [apartment.building, apartment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= @building.name %></td>
+    <td>
+      <%= link_to [apartment.building, apartment], class: "btn btn-outline-primary", title: 'Mostrar' do %> 
+        <i class="bi bi-eye"></i>
+      <% end %>
+      <%= link_to edit_building_apartment_path(apartment.building, apartment), class: "btn btn-outline-primary", title: 'Editar' do %> 
+        <i class="bi bi-pencil"></i>
+      <% end %>
+      <%= link_to [apartment.building, apartment], method: :delete, data: { confirm: '¿Seguro(a) de eliminar?'}, class: "btn btn-outline-primary", title: 'Eliminar' do %> 
+        <i class="bi bi-trash"></i> 
+      <% end %>
+    </td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= button_to 'Nuevo Departamento', new_building_apartment_path(params[:building_id]), method: :get, class: "btn btn-outline-success" %>
-<%# <%= link_to 'Nuevo Departamento', new_building_apartment_path(params[:building_id]) %>
+<%= button_to 'Nuevo Departamento', new_building_apartment_path(params[:building_id]), method: :get, class: "btn btn-outline-primary" %>
+<%= link_to  buildings_path, class: "btn btn-outline-primary", title: 'Volver' do %> 
+  <i class="bi bi-arrow-counterclockwise"></i>
+<% end %>
